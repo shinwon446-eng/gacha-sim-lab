@@ -14,7 +14,7 @@ export function generateStaticParams() {
 }
 export const dynamicParams = false;
 
-const SITE = "https://shinwon446-eng.github.io/gacha-sim";
+const SITE = "https://shinwon446-eng.github.io/gacha-sim-lab";
 const TITLE = "VOILA";
 const OG_IMAGE = `${SITE}/assets/photography/photo-1610375461246-83df859d849d.webp`;
 /** 로케일별 메타 설명, /en/, /zh/ 에 한국어가 새지 않게 여기서 분기한다 */

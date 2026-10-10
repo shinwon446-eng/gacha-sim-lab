@@ -256,7 +256,7 @@ test("컬렉션 이미지는 유효한 로컬 WebP이며 출처와 imageUrl 별�
         have += 1;
         assert.match(
           x.image.src,
-          /^\/(?:gacha-sim\/)?assets\/photography\/photo-[\w-]+\.webp$/,
+          /^\/(?:gacha-sim-lab\/)?assets\/photography\/photo-[\w-]+\.webp$/,
           `${x.id}: 검증된 로컬 이미지 경로 필요`,
         );
         const assetPath = x.image.src.slice(x.image.src.indexOf("/assets/"));
