@@ -1,16 +1,18 @@
-> ## ⚠️ 이 폴더는 실험용 복제 사이트(VOILA LAB)다 — 운영 사이트가 아니다
+> ## ⚠️ 이 폴더는 VOILA 테스트 사이트(voila-test-shinwon · shinwon 작업용)다 — 운영 사이트가 아니다
 >
-> | | 실험용 (이 폴더) | 운영 |
-> |---|---|---|
-> | 로컬 폴더 | `Desktop\가챠서비-lab` | `Desktop\가챠서비` |
-> | GitHub | `shinwon446-eng/gacha-sim-lab` (main) | `shinwon446-eng/gacha-sim` (feat/netflix-gacha-web) |
-> | 주소 | https://shinwon446-eng.github.io/gacha-sim-lab/ | https://shinwon446-eng.github.io/gacha-sim/ |
-> | 로컬 dev 포트 | 3001 | 3000 |
+> | | VOILA (기준 · 운영) | 테스트 · shinwon | 테스트 · aresjoo |
+> |---|---|---|---|
+> | GitHub | `shinwon446-eng/gacha-sim` (feat/netflix-gacha-web) | `shinwon446-eng/voila-test-shinwon` (main) | `shinwon446-eng/voila-test-aresjoo` (main) |
+> | 주소 | https://shinwon446-eng.github.io/gacha-sim/ | https://shinwon446-eng.github.io/voila-test-shinwon/ | https://shinwon446-eng.github.io/voila-test-aresjoo/ |
+> | 로컬 폴더 | `Desktop\\가챠서비` | `Desktop\\VOILA-test-shinwon` | `Desktop\\VOILA-test-aresjoo` |
+> | 로컬 dev 포트 | 3000 | 3001 | 3002 |
+> | 화면 표시 | 없음 | 시안 라인 + `TEST · shinwon` | 마젠타 라인 + `TEST · aresjoo` |
+> | 저장소 접두사 | 없음(`gachaflix.*` 원본 키) | `voila-test-shinwon:` | `voila-test-aresjoo:` |
 >
-> - 화면 구분: 상단 시안 라인 + 좌하단 `TEST SITE` 배지(`components/layout/LabBadge.tsx`), 탭 제목 `[TEST] VOILA`, 검색 노출 차단(robots noindex).
-> - **저장소 분리**: 두 사이트는 같은 출처(shinwon446-eng.github.io)라 localStorage 를 공유한다. `lib/labSite.ts` 의 셰임이
->   모든 키 앞에 `voila-lab:` 을 붙여 운영 사이트의 지갑·보관함·로그인 저장값을 읽거나 덮어쓰지 않는다. 이 셰임을 지우지 말 것.
-> - 새 기능은 여기서 실험하고, 검증된 변경만 운영 저장소로 옮긴다. 운영으로 옮길 때 `LabBadge` · `labSite` · basePath 변경은 가져가지 않는다.
+> - 이 사이트의 정체성(주소·작업자·색·저장소 접두사·탭 제목)은 `web/lib/labSite.ts` 한 곳에 있다. basePath 는 `web/next.config.mjs`, SITE 는 두 layout 에 같은 값.
+> - **저장소 분리**: 세 사이트는 같은 출처(shinwon446-eng.github.io)라 localStorage 를 공유한다. `labSite.ts` 의 셰임이 모든 키에
+>   이 사이트 접두사를 붙여 서로의 지갑·보관함·로그인 저장값을 읽거나 덮어쓰지 않는다. 저장 공간 초과는 페이지를 죽이지 않고 안내만 띄운다. 이 셰임을 지우지 말 것.
+> - 새 기능은 여기서 실험하고, 검증된 변경만 운영 저장소로 옮긴다. 옮길 때 `LabBadge` · `labSite` · basePath · SITE 변경은 가져가지 않는다.
 
 # CLAUDE.md - VOILA (voila.gg)
 

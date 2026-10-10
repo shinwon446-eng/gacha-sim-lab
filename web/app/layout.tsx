@@ -13,7 +13,7 @@ import { LAB_STORAGE_SHIM, LAB_TITLE } from "@/lib/labSite";
  */
 const pretendard = localFont({ src: "../public/assets/fonts/PretendardVariable.woff2", variable: "--font-ui", display: "swap", weight: "45 920" });
 
-const SITE = "https://shinwon446-eng.github.io/gacha-sim-lab";
+const SITE = "https://shinwon446-eng.github.io/voila-test-shinwon";
 const TITLE = LAB_TITLE;
 const DESCRIPTION = "롤렉스부터 하이엔드 테크까지, 1달러에 여는 럭셔리 언박싱. 정품 무료 배송 또는 95% 즉시 페이백.";
 const OG_IMAGE = `${SITE}/assets/photography/photo-1610375461246-83df859d849d.webp`;

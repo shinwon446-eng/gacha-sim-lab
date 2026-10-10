@@ -2,9 +2,14 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "gachaflix-web-lab",
+      "name": "voila-test-shinwon",
       "runtimeExecutable": "C:\\Program Files\\nodejs\\node.exe",
-      "runtimeArgs": ["node_modules/next/dist/bin/next", "dev", "-p", "3001"],
+      "runtimeArgs": [
+        "node_modules/next/dist/bin/next",
+        "dev",
+        "-p",
+        "3001"
+      ],
       "cwd": "web",
       "port": 3001
     }
