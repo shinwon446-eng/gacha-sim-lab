@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { CurrencyHydrator } from "@/components/layout/CurrencyHydrator";
+import { LAB_STORAGE_SHIM, LAB_TITLE } from "@/lib/labSite";
 
 /**
  * 타이포그래피 (CLAUDE.md §2)
@@ -13,7 +14,7 @@ import { CurrencyHydrator } from "@/components/layout/CurrencyHydrator";
 const pretendard = localFont({ src: "../public/assets/fonts/PretendardVariable.woff2", variable: "--font-ui", display: "swap", weight: "45 920" });
 
 const SITE = "https://shinwon446-eng.github.io/gacha-sim-lab";
-const TITLE = "VOILA";
+const TITLE = LAB_TITLE;
 const DESCRIPTION = "롤렉스부터 하이엔드 테크까지, 1달러에 여는 럭셔리 언박싱. 정품 무료 배송 또는 95% 즉시 페이백.";
 const OG_IMAGE = `${SITE}/assets/photography/photo-1610375461246-83df859d849d.webp`;
 
@@ -21,6 +22,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE),
   title: TITLE,
   description: DESCRIPTION,
+  // 실험용 복제 사이트 — 검색 엔진에 노출하지 않는다
+  robots: { index: false, follow: false },
   openGraph: {
     type: "website",
     siteName: "VOILA",
@@ -40,6 +43,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko" className={pretendard.variable}>
+      <head>
+        {/* 운영 사이트와 같은 출처 — 저장소를 다른 어떤 스크립트보다 먼저 분리한다 (lib/labSite.ts) */}
+        <script dangerouslySetInnerHTML={{ __html: LAB_STORAGE_SHIM }} />
+      </head>
       <body className="min-h-screen bg-canvas font-sans text-white antialiased">
         <CurrencyHydrator />
         {children}

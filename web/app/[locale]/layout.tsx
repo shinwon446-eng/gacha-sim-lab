@@ -7,6 +7,8 @@ import { LocaleHtmlLang } from "@/components/layout/LocaleHtmlLang";
 import { Footer } from "@/components/layout/Footer";
 import { AuthHost } from "@/components/auth/AuthHost";
 import { MotionPreferences } from "@/components/layout/MotionPreferences";
+import { LabBadge } from "@/components/layout/LabBadge";
+import { LAB_TITLE } from "@/lib/labSite";
 
 /** 정적 export, 세 로케일을 전부 미리 생성한다. 목록 밖 로케일은 404. */
 export function generateStaticParams() {
@@ -15,7 +17,7 @@ export function generateStaticParams() {
 export const dynamicParams = false;
 
 const SITE = "https://shinwon446-eng.github.io/gacha-sim-lab";
-const TITLE = "VOILA";
+const TITLE = LAB_TITLE;
 const OG_IMAGE = `${SITE}/assets/photography/photo-1610375461246-83df859d849d.webp`;
 /** 로케일별 메타 설명, /en/, /zh/ 에 한국어가 새지 않게 여기서 분기한다 */
 const DESCRIPTION: Record<Locale, string> = {
@@ -32,6 +34,7 @@ export function generateMetadata({ params: { locale } }: { params: { locale: str
     metadataBase: new URL(SITE),
     title: TITLE,
     description,
+    robots: { index: false, follow: false },
     alternates: {
       canonical: `${SITE}/${loc}/`,
       languages: Object.fromEntries(routing.locales.map((l) => [l, `${SITE}/${l}/`])),
@@ -71,6 +74,7 @@ export default async function LocaleLayout({
       </div>
       {/* 로그인, 회원가입 모달과 확인 토스트, 어느 페이지에서든 열린다 */}
       <AuthHost />
+      <LabBadge />
       </MotionPreferences>
     </NextIntlClientProvider>
   );
